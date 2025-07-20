@@ -13,6 +13,15 @@ const shuffleArray = (array) => {
     return newArray;
 };
 
+const highlightWord = (sentence, word) => {
+    if (!sentence) return '';
+    const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+    const parts = sentence.split(regex);
+    return parts.map((part, index) => 
+        regex.test(part) ? <strong key={index}>{part}</strong> : part
+    );
+};
+
 const WordCard = ({ wordData, index, allWords, onFirstTry }) => {
     const [isFlipped, setIsFlipped] = useState(false);
     const [options, setOptions] = useState([]);
@@ -121,7 +130,8 @@ const WordCard = ({ wordData, index, allWords, onFirstTry }) => {
                         <h5 className="card-title">{wordData.word}</h5>
                         <p className="card-text">{wordData.cn}</p>
                         <p className="phonetic">{wordData.phonetic}</p>
-                        <p className="card-text">{wordData.definition}</p> 
+                        <p className="card-text">{wordData.definition}</p>
+                        <p className="card-text font-italic">例: {highlightWord(wordData.example, wordData.word)}</p>
                         <div className="d-flex justify-content-center align-items-center mt-3">
                             <span className="speaker-icon mx-2" onClick={handleSpeakerClick}>&#x1f50a;</span>
                             <span className="reset-icon mx-2" onClick={handleResetClick} style={{cursor: 'pointer', fontSize: '1.5rem'}}>&#x21bb;</span>

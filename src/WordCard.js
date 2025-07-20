@@ -14,7 +14,7 @@ const shuffleArray = (array) => {
 };
 
 const WordCard = ({ wordData, index, allWords, onFirstTry }) => {
-    const [isRevealed, setIsRevealed] = useState(false);
+    const [isFlipped, setIsFlipped] = useState(false);
     const [options, setOptions] = useState([]);
     const [selectedWord, setSelectedWord] = useState(null);
     const [imageUrl, setImageUrl] = useState(`https://picsum.photos/seed/${wordData.word}/400/300`);
@@ -29,10 +29,12 @@ const WordCard = ({ wordData, index, allWords, onFirstTry }) => {
 
         const allOptions = [wordData, ...wrongOptions];
         setOptions(shuffleArray(allOptions));
+        setIsFlipped(false);
+        setSelectedWord(null);
     }, [wordData, allWords]);
 
     const handleOptionClick = (option) => {
-        if (selectedWord === option.word) return;
+        if (isFlipped) return;
 
         setSelectedWord(option.word);
         const isCorrect = option.word === wordData.word;
@@ -45,7 +47,7 @@ const WordCard = ({ wordData, index, allWords, onFirstTry }) => {
         if (isCorrect) {
             setCardScores(prev => ({ ...prev, correct: prev.correct + 1 }));
             correctSound.play().catch(e => console.error("Error playing correct sound:", e));
-            setIsRevealed(true);
+            setIsFlipped(true);
         } else {
             setCardScores(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
             incorrectSound.play().catch(e => console.error("Error playing incorrect sound:", e));
@@ -59,13 +61,14 @@ const WordCard = ({ wordData, index, allWords, onFirstTry }) => {
     };
 
     const handleImageClick = () => {
+        if (isFlipped) return;
         const newImageUrl = `https://picsum.photos/seed/${wordData.word}${Math.random()}/400/300`;
         setImageUrl(newImageUrl);
     };
 
     const handleResetClick = (e) => {
         e.stopPropagation();
-        setIsRevealed(false);
+        setIsFlipped(false);
         setSelectedWord(null);
     };
 
@@ -77,43 +80,53 @@ const WordCard = ({ wordData, index, allWords, onFirstTry }) => {
     };
 
     return (
-        <div className="word-card">
-            <img 
-                src={imageUrl}
-                className="card-img-top"
-                alt={wordData.word}
-                onClick={handleImageClick}
-                style={{ cursor: 'pointer' }}
-                onError={(e) => {
-                    e.target.onerror = null; 
-                    e.target.src = `https://via.placeholder.com/400x300.png?text=${wordData.word}`;
-                }}
-            />
-            <div className="card-body">
-                <h5 className="card-title">
-                    {isRevealed ? `${wordData.word}: ${wordData.cn}` : ''}
-                </h5>
-                <p className="card-text">{wordData.definition}</p>
-                
-                {isRevealed && <p className="phonetic">{wordData.phonetic}</p>}
-                <div className="d-flex justify-content-between align-items-center mb-3">
-                    {isRevealed && <span className="speaker-icon" onClick={handleSpeakerClick}>&#x1f50a;</span>}
-                    {selectedWord && <span className="reset-icon" onClick={handleResetClick} style={{cursor: 'pointer', fontSize: '1.5rem'}}>&#x21bb;</span>}
+        <div className="word-card-container">
+            <div className={`word-card ${isFlipped ? 'is-flipped' : ''}`}>
+                {/* Both front and back are in the same grid cell */}
+                <div className="word-card-face word-card-front">
+                    <img 
+                        src={imageUrl}
+                        className="card-img-top"
+                        alt={wordData.word}
+                        onClick={handleImageClick}
+                        style={{ cursor: 'pointer' }}
+                        onError={(e) => {
+                            e.target.onerror = null; 
+                            e.target.src = `https://via.placeholder.com/400x300.png?text=${wordData.word}`;
+                        }}
+                    />
+                    <div className="card-body">
+                        <p className="card-text">{wordData.definition}</p>
+                        <div className="options-container">
+                            {options.map((option, i) => (
+                                <button 
+                                    key={i} 
+                                    className={`btn ${getButtonClass(option)} mb-2`}
+                                    onClick={() => handleOptionClick(option)}
+                                    disabled={isFlipped}
+                                >
+                                    {option.word}
+                                </button>
+                            ))}
+                        </div>
+                        <div className="card-scoreboard mt-3">
+                            <span className="score-correct">Correct: {cardScores.correct}</span>
+                            <span className="score-incorrect">Incorrect: {cardScores.incorrect}</span>
+                        </div>
+                    </div>
                 </div>
-                <div className="options-container">
-                    {options.map((option, i) => (
-                        <button 
-                            key={i} 
-                            className={`btn ${getButtonClass(option)} mb-2`}
-                            onClick={() => handleOptionClick(option)}
-                        >
-                            {option.word}
-                        </button>
-                    ))}
-                </div>
-                <div className="card-scoreboard mt-3">
-                    <span className="score-correct">Correct: {cardScores.correct}</span>
-                    <span className="score-incorrect">Incorrect: {cardScores.incorrect}</span>
+
+                <div className="word-card-face word-card-back">
+                    <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                        <h5 className="card-title">{wordData.word}</h5>
+                        <p className="card-text">{wordData.cn}</p>
+                        <p className="phonetic">{wordData.phonetic}</p>
+                        <p className="card-text">{wordData.definition}</p> 
+                        <div className="d-flex justify-content-center align-items-center mt-3">
+                            <span className="speaker-icon mx-2" onClick={handleSpeakerClick}>&#x1f50a;</span>
+                            <span className="reset-icon mx-2" onClick={handleResetClick} style={{cursor: 'pointer', fontSize: '1.5rem'}}>&#x21bb;</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

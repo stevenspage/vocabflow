@@ -7,7 +7,7 @@ import './App.css'; // Import the CSS file
 
 const App = () => {
     const [words, setWords] = useState(wordList);
-    const [theme, setTheme] = useState('theme-dusk'); // A nice dark theme to start
+    const [theme, setTheme] = useState('theme-nord-dark'); // Set default theme to Nord Dark
     const [globalStats, setGlobalStats] = useState({ studied: 0, correct: 0 });
 
     const handleThemeChange = (newTheme) => {
@@ -24,7 +24,8 @@ const App = () => {
     return (
         <div className={`app-container ${theme}`}>
             <div className="container-fluid">
-                <h1 className="text-center my-4 site-title">VocabFlow：挑战GRE 1500词汇</h1>
+                <p className="text-center my-2 author-info">Created by Steven</p>
+                <h1 className="text-center my-4 site-title">挑战雅思 & GRE 1500词</h1>
                 <ThemeSwitcher onThemeChange={handleThemeChange} currentTheme={theme} />
                 <GlobalStats studied={globalStats.studied} correct={globalStats.correct} />
                 <div className="word-grid">

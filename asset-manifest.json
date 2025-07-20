@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/vocabflow/static/css/main.1e18924c.css",
+    "main.css": "/vocabflow/static/css/main.5a1bff4d.css",
     "main.js": "/vocabflow/static/js/main.d641959c.js",
     "static/js/453.ee008c09.chunk.js": "/vocabflow/static/js/453.ee008c09.chunk.js",
     "index.html": "/vocabflow/index.html",
-    "main.1e18924c.css.map": "/vocabflow/static/css/main.1e18924c.css.map",
+    "main.5a1bff4d.css.map": "/vocabflow/static/css/main.5a1bff4d.css.map",
     "main.d641959c.js.map": "/vocabflow/static/js/main.d641959c.js.map",
     "453.ee008c09.chunk.js.map": "/vocabflow/static/js/453.ee008c09.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e18924c.css",
+    "static/css/main.5a1bff4d.css",
     "static/js/main.d641959c.js"
   ]
 }

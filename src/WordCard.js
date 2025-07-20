@@ -15,11 +15,18 @@ const shuffleArray = (array) => {
 
 const highlightWord = (sentence, word) => {
     if (!sentence) return '';
-    const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+    // Create a more robust regex to handle common variations (plural, -ing, -ed)
+    const baseWord = word.endsWith('e') ? word.slice(0, -1) : word;
+    const regex = new RegExp(`\\b(${baseWord}[a-z]*)?\\b`, 'gi');
+    
     const parts = sentence.split(regex);
-    return parts.map((part, index) => 
-        regex.test(part) ? <strong key={index}>{part}</strong> : part
-    );
+    
+    return parts.map((part, index) => {
+        if (part && part.toLowerCase().startsWith(baseWord.toLowerCase())) {
+            return <strong key={index}>{part}</strong>;
+        }
+        return part;
+    });
 };
 
 const WordCard = ({ wordData, index, allWords, onFirstTry }) => {

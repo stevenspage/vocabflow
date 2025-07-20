@@ -10,10 +10,12 @@
     transform-style: preserve-3d;
     transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
     width: 100%; /* Ensure card takes full width of container */
+    -webkit-transform-style: preserve-3d; /* Safari */
 }
 
 .word-card.is-flipped {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); /* Safari */
 }
 
 .word-card-face {
@@ -26,11 +28,14 @@
     border-radius: 15px;
     background-color: var(--card-bg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transform: translateZ(0); /* Promotes the element to its own layer */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0); /* Safari */
+    -webkit-font-smoothing: subpixel-antialiased; /* Safari */
 }
 
 .word-card-back {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); /* Safari */
     justify-content: center;
     align-items: center;
     padding: 20px;

@@ -1,0 +1,1 @@
+chore: ensure build script is present for cloudflare

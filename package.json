@@ -15,10 +15,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env HOMEPAGE=. node scripts/set-homepage.js && react-scripts build && node scripts/restore-homepage.js",
+    "build:github": "cross-env HOMEPAGE=/vocabflow node scripts/set-homepage.js && react-scripts build && node scripts/restore-homepage.js",
+    "build:cloudflare": "cross-env HOMEPAGE=. node scripts/set-homepage.js && react-scripts build && node scripts/restore-homepage.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build:github",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -40,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "gh-pages": "^6.3.0"
   }
 }

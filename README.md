@@ -37,6 +37,34 @@
 - Create React App
 - Bootstrap
 
+## 部署说明
+
+项目支持同时部署到 GitHub Pages 和 Cloudflare Pages。
+
+### GitHub Pages 部署
+
+```bash
+npm run deploy
+```
+
+这将使用 `build:github` 脚本构建（路径为 `/vocabflow/`），并自动推送到 `gh-pages` 分支。
+
+### Cloudflare Pages 部署
+
+在 Cloudflare Pages 中配置：
+- **分支**: `main`
+- **构建命令**: `npm run build` 或 `npm run build:cloudflare`
+- **构建输出目录**: `build`
+- **Node.js 版本**: 18 或 20
+
+默认的 `npm run build` 命令已配置为 Cloudflare Pages（根路径部署）。
+
+### 构建脚本说明
+
+- `npm run build` - 默认构建（Cloudflare Pages，根路径）
+- `npm run build:cloudflare` - 明确指定 Cloudflare Pages 构建
+- `npm run build:github` - GitHub Pages 构建（子路径 `/vocabflow/`）
+
 ---
 
 Created by Steven

@@ -6,7 +6,7 @@ import wordList from './words.js';
 import './App.css'; // Import the CSS file
 
 const App = () => {
-    const [words, setWords] = useState(wordList);
+    const words = wordList;
     const [theme, setTheme] = useState('theme-nord-dark'); // Set default theme to Nord Dark
     const [globalStats, setGlobalStats] = useState({ studied: 0, correct: 0 });
 

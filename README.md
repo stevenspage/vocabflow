@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# 挑战雅思 & GRE 1500词
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+一个交互式的英语词汇学习应用，帮助您高效学习雅思和 GRE 核心词汇。
 
-## Available Scripts
+## 功能特性
 
-In the project directory, you can run:
+### 📚 词汇学习
+- **1500 个核心词汇**：涵盖雅思和 GRE 考试高频词汇
+- **单词卡片**：每个单词包含英文定义、中文释义、音标和例句
+- **选择题练习**：通过选择题形式测试词汇理解，加深记忆
 
-### `npm start`
+### 🎯 学习统计
+- **全局统计**：实时追踪已学习单词数量、首次正确数和正确率
+- **卡片统计**：每个单词卡片独立记录正确和错误次数
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🎨 个性化体验
+- **16 种主题**：支持多种视觉主题，包括森林、日落、樱花、石板、靛蓝、珊瑚、单色、黄昏、午夜、德古拉、石墨、深红、深空、极北、经典、夜枭等
+- **随机图片**：每个单词配有随机图片，点击可更换，增强视觉记忆
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🔊 交互功能
+- **语音播放**：点击扬声器图标听取单词发音
+- **音效反馈**：答对或答错时播放相应音效
+- **卡片翻转**：答对后自动翻转卡片，查看完整单词信息
+- **重置功能**：可随时重置单词卡片，重新练习
 
-### `npm test`
+## 使用方法
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. 查看单词定义和图片
+2. 从三个选项中选择正确的单词
+3. 答对后卡片自动翻转，显示完整信息
+4. 点击扬声器图标听取发音
+5. 点击重置图标重新练习该单词
 
-### `npm run build`
+## 技术栈
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React 19
+- Create React App
+- Bootstrap
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Created by Steven

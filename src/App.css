@@ -109,13 +109,10 @@
 /* --- Light Themes --- */
 .theme-forest { --primary-color: #28a745; --background-color: #e9f5ec; --card-bg: #fff; --text-color: #212529; --subtle-text: #495057; }
 .theme-sunset { --primary-color: #fd7e14; --background-color: #fff3e0; --card-bg: #fff; --text-color: #333; --subtle-text: #555; }
-.theme-ocean { --primary-color: #17a2b8; --background-color: #eef9fa; --card-bg: #fff; --text-color: #212529; --subtle-text: #495057; }
 .theme-sakura { --primary-color: #e83e8c; --background-color: #fdf3f8; --card-bg: #fff; --text-color: #212529; --subtle-text: #495057; }
 .theme-royal { --primary-color: #6f42c1; --background-color: #f8f6fc; --card-bg: #fff; --text-color: #212529; --subtle-text: #495057; }
 .theme-lava { --primary-color: #dc3545; --background-color: #fdf3f4; --card-bg: #fff; --text-color: #212529; --subtle-text: #495057; }
 .theme-grape { --primary-color: #6f42c1; --background-color: #f8f6fc; --card-bg: #fff; --text-color: #212529; --subtle-text: #495057; }
-.theme-emerald { --primary-color: #50c878; --background-color: #f0faf3; --card-bg: #fff; --text-color: #212529; --subtle-text: #495057; }
-.theme-rose { --primary-color: #e83e8c; --background-color: #fdf3f8; --card-bg: #fff; --text-color: #212529; --subtle-text: #495057; }
 .theme-slate { --primary-color: #6c757d; --background-color: #f8f9fa; --card-bg: #fff; --text-color: #212529; --subtle-text: #495057; }
 .theme-indigo { --primary-color: #4b0082; --background-color: #f5f0fa; --card-bg: #fff; --text-color: #212529; --subtle-text: #495057; }
 .theme-coral { --primary-color: #ff7f50; --background-color: #fff5f2; --card-bg: #fff; --text-color: #212529; --subtle-text: #495057; }
@@ -129,7 +126,6 @@
 .theme-crimson { --primary-color: #dc3545; --background-color: #1b1b1b; --card-bg: #2c2c2c; --text-color: #f8f8f8; --subtle-text: #b5b5b5; }
 .theme-solarized-dark { --primary-color: #268bd2; --background-color: #002b36; --card-bg: #073642; --text-color: #eee8d5; --subtle-text: #93a1a1; }
 .theme-nord-dark { --primary-color: #88c0d0; --background-color: #2e3440; --card-bg: #3b4252; --text-color: #eceff4; --subtle-text: #d8dee9; }
-.theme-gruvbox-dark { --primary-color: #fabd2f; --background-color: #282828; --card-bg: #3c3836; --text-color: #ebdbb2; --subtle-text: #bdae93; }
 .theme-monokai-pro { --primary-color: #ffd866; --background-color: #2d2a2e; --card-bg: #403e41; --text-color: #fcfcfa; --subtle-text: #9ca0a4; }
 .theme-night-owl { --primary-color: #7fdbca; --background-color: #011627; --card-bg: #011e36; --text-color: #d6deeb; --subtle-text: #5f7e97; }
 

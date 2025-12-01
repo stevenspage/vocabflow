@@ -2,6 +2,8 @@
 
 一个交互式的英语词汇学习应用，帮助您高效学习雅思和 GRE 核心词汇。
 
+🌐 **在线体验**: [https://stevenspage.github.io/vocabflow/](https://stevenspage.github.io/vocabflow/)
+
 ## 功能特性
 
 ### 📚 词汇学习
@@ -30,40 +32,6 @@
 3. 答对后卡片自动翻转，显示完整信息
 4. 点击扬声器图标听取发音
 5. 点击重置图标重新练习该单词
-
-## 技术栈
-
-- React 19
-- Create React App
-- Bootstrap
-
-## 部署说明
-
-项目支持同时部署到 GitHub Pages 和 Cloudflare Pages。
-
-### GitHub Pages 部署
-
-```bash
-npm run deploy
-```
-
-这将使用 `build:github` 脚本构建（路径为 `/vocabflow/`），并自动推送到 `gh-pages` 分支。
-
-### Cloudflare Pages 部署
-
-在 Cloudflare Pages 中配置：
-- **分支**: `main`
-- **构建命令**: `npm run build` 或 `npm run build:cloudflare`
-- **构建输出目录**: `build`
-- **Node.js 版本**: 18 或 20
-
-默认的 `npm run build` 命令已配置为 Cloudflare Pages（根路径部署）。
-
-### 构建脚本说明
-
-- `npm run build` - 默认构建（Cloudflare Pages，根路径）
-- `npm run build:cloudflare` - 明确指定 Cloudflare Pages 构建
-- `npm run build:github` - GitHub Pages 构建（子路径 `/vocabflow/`）
 
 ---
 
